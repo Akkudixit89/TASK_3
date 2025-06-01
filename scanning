@@ -1,1 +1,138 @@
+🛡️ TOOL 1: OpenVAS (GVM - Greenbone Vulnerability Manager) on Linux/Kali
+✅ 1. Install OpenVAS (if not already installed)
+On Kali Linux:
 
+sudo apt update
+sudo apt install openvas -y
+sudo gvm-setup
+This sets up the GVM environment and downloads vulnerability feeds.
+
+✅ 2. Set up Scan Target (Local Machine)
+Get your local IP address:
+ip a
+Then open the GVM web interface (usually at https://localhost:9392).
+
+Log in with the admin credentials set during gvm-setup.
+
+Go to Scans > Targets → New Target:
+
+Name: Localhost
+
+Host: 127.0.0.1 or your actual IP
+
+Save
+
+✅ 3. Start a Full Vulnerability Scan
+Go to Scans > Tasks → New Task
+
+Name: Localhost Full Scan
+
+Scan Target: Localhost
+
+Scanner: Full and fast
+
+Save, then click the play button ▶️ to start scan
+
+⏱️ Scan Duration: 30–60 minutes depending on system performance
+
+✅ 4. Wait for the Scan to Complete
+Monitor scan under Scans > Tasks
+
+When done, status shows Done or Completed
+
+✅ 5. Review the Report
+Go to Scans > Reports
+
+Click your report to see:
+
+Vulnerabilities
+
+Severity (High, Medium, Low)
+
+CVEs (if any)
+
+✅ 6. Research Fixes or Mitigations
+For each high-severity vulnerability:
+
+Search the CVE on https://cve.mitre.org/
+
+Apply updates or patches
+
+Disable unnecessary services
+
+Use secure configurations
+
+✅ 7. Document Most Critical Vulnerabilities
+Make a list of:
+
+Vulnerability name
+
+CVE ID
+
+Severity
+
+Suggested fix
+
+Example:
+
+vbnet
+Vulnerability: OpenSSH 8.2 < 8.4 - CVE-2020-15778
+Severity: High
+Fix: Update OpenSSH to version 8.4 or higher.
+✅ 8. Take Screenshots of Scan Results
+Use:
+
+gnome-screenshot
+Or use Print Screen key on your keyboard and take screenshots of:
+
+The Report Summary
+
+A specific high/medium vulnerability details
+
+The Task status page
+
+🛡️ TOOL 2: Nessus Essentials (Windows/Linux/macOS)
+✅ 1. Install Nessus Essentials
+Download from: https://www.tenable.com/products/nessus/nessus-essentials
+
+Register for a free activation key
+
+Install and set up per on-screen instructions
+
+✅ 2. Set Up Localhost Scan
+Open Nessus in browser: https://localhost:8834
+
+Create a new scan:
+
+Type: Basic Network Scan
+
+Target: 127.0.0.1 or your PC’s IP address
+
+✅ 3. Launch Full Scan
+Save the scan → click Launch
+
+Wait for it to finish (can take 30–45 minutes)
+
+✅ 4. Review Report & Document Issues
+Click the completed scan to open report
+
+Filter by Severity: Critical/High
+
+Document similar to the OpenVAS example
+
+✅ 5. Take Screenshots
+Use Snipping Tool or Print Screen on Windows:
+
+Scan Summary
+
+High/Critical findings
+
+CVE info popup
+
+✅ DELIVERABLES CHECKLIST
+Task	Required Deliverable
+✅ Installed OpenVAS or Nessus	Screenshot of terminal or GUI
+✅ Scan completed	Screenshot of completed scan
+✅ Report reviewed	Screenshot of vulnerabilities and severity
+✅ Fixes researched	Text summary or screenshots of fixes
+✅ Critical vulnerabilities documented	List with CVEs, severity, and suggested actions
